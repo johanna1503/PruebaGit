@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ConsumeProyec</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="MyScripDisfrazJR.js"></script>
+</head>
+
+<body>
+    <h1>DISFRAZ!!</h1>
+    <div id="resultado"></div> 
+    <button onclick="leerDisfraz()">DETALLE DISFRAZ</button>
+    <div>  
+        ID<input type="number" id="ID" placeholder="IDDisfraz"><br>
+        MARCA<input type="text" id="ModeloDisfraz" placeholder="ModeloDisfraz"><br>
+        MODELO<input type="number" id="MarcaDisfraz" placeholder="MarcaDisfraz"><br>
+        ID Categoria<input type="number" id="CategoriaId" placeholder="CategoriaId"><br>
+        NOMBRE<input type="text" id="NombreDisfraz" placeholder="NombreDisfraz"><br>
+    </div>
+    
+
+    <button onclick="guardarDisfraz()">GUARDAR DISFRAZ</button>
+    <button onclick="editarDisfraz()">ACTUALIZAR DISFRAZ</button>
+    <!--<button onclick="borrarDisfraz()">BORRAR DISFRAZ</button>-->
+
+
+    <div id="listaDeDisfraces">
+
+    </div>
+
+</body>
+</html>
