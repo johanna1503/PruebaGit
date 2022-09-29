@@ -1,24 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>ConsumeProyec</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="myScrip.js"></script>
 </head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script type="text/javascript" src="MyScripDisfraz.js"></script>
 <body>
-    <h1>CLIENTES</h1>
-    ID CLIENTE<input type="number" id="idCliente"><br>
-    NOMBRE CLIENTE<input type="text" id="nombreCliente"><br>
-    CORREO CLIENTE<input type="text" id="emailCliente"><br>
-    EDAD CLIENTE<input type="number" id="edad"><br>
 
-    <button onclick="guardarClientes()">GUARDAR CLIENTE</button>
-    <!--<button onclick="editarClientes()">ACTUALIZAR CLIENTE</button>-->
-    <button onclick="leerClientes()">TRAER CLIENTE</button>
-
-    <div id="listaDeClientes">
-
+    <h1> COSTUME!! </h1>
+    
+    <div>
+        <p> ID: <input type="number" id="id" placeholder="id"> </p>
+        <p> Brand: <input type="text" id="brand" placeholder="brand"> </p>
+        <p> Model: <input type="number" id="model" placeholder="model"> </p>
+        <p> Category ID: <input type="number" id="category_id" placeholder="category_id"> </p>
+        <p> Name: <input type="text" id="name" placeholder="name"> </p>   
     </div>
+
+    <button onclick="searchInfo()"> Search </button>
+    <button onclick="saveInfo()"> Save </button>
+    <button onclick="updateInfo()"> Update </button>
+
+    <div id="resultInfo"> </div>
+
+    <h1> CLIENTS! </h1>
+        
+    <div>
+        <p> ID: <input type="number" id="idC" placeholder="client id"> </p>
+        <p> Name: <input type="text" id="nameC" placeholder="name"> </p>  
+        <p> E-mail: <input type="text" id="email" placeholder="email"> </p>
+        <p> Age: <input type="number" id="age" placeholder="age"> </p>     
+    </div>
+
+    <button onclick="searchClient()"> Search </button>
+    <button onclick="saveClient()"> Save </button>
+    <button onclick="updateClient()"> Update </button>
+
+    <div id="resultClient"> </div>
+
+    <h1> MESSAGES! </h1>
+        
+    <div>
+        <p> ID: <input type="number" id="idM" placeholder="message id"> </p>
+        <p> Message: <input type="text" id="message" placeholder="message"> </p>  
+    </div>
+
+    <button onclick="searchMessage()"> Search </button>
+    <button onclick="saveMessage()"> Save </button>
+    <button onclick="updateMessage()"> Update </button>
+
+    <div id="resultMessage"> </div>
 
 </body>
 </html>

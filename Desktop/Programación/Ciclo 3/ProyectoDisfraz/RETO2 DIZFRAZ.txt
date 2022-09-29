@@ -1,0 +1,87 @@
+TABLA CLIENTE
+CREATE TABLE CLIENT (
+    ID NUMBER NOT NULL,
+    NAME VARCHAR (4000) NULL,
+    EMAIL VARCHAR2 (40) NULL,
+    AGE NUMBER NULL,
+    PRIMARY KEY (ID));
+
+CREATE SEQUENCE DISFRAZ_seq START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER DISFRAZ_seq_tr
+BEFORE INSERT ON DISFRAZ FOR EACH ROW
+WHEN (new.id IS NULL)
+BEGIN
+    SELECT DISFRAZ_seq.NEXTVAL INTO:NEW.id FROM DUAL;
+END;
+
+
+CREATE TABLE MESSAGE (
+    ID NUMBER NOT NULL,
+    MESSAGETEXT VARCHAR2 (4000) NULL,
+    PRIMARY KEY (ID));
+
+
+CREACION MODULO CLIENTE
+
+GET 
+SELECT * FROM CLIENT;
+
+POST
+BEGIN
+    INSERT INTO CLIENT (ID, NAME, EMAIL, AGE)
+    VALUES(:id, :name, :email, :age);
+    :status_code :=201;
+END;
+
+Creación PUT
+BEGIN
+    UPDATE CLIENT
+    SET
+    NAME = :name,
+    EMAIL = :email,
+    AGE   = :age
+    WHERE ID = :id;
+    :status_code := 201;
+END;
+
+Creación del DELETE
+BEGIN
+    DELETE FROM CLIENT
+    WHERE ID = :id;
+    :status_code := 204;
+END; 
+
+Buscar Cliente por ID
+SELECT * FROM CLIENT WHERE ID=:id
+
+CREACIÓN MODULO MESSAGE
+
+GET
+SELECT * FROM MESSAGE
+
+POST
+BEGIN
+    INSERT INTO MESSAGE(ID, MESSAGETEXT)
+    VALUES(:id, :messagetext);
+    :status_code := 201;
+END;
+
+PUT
+BEGIN
+    UPDATE MESSAGE
+    SET
+    MESSAGETEXT = :messagetext 
+    WHERE ID = :id;
+    :status_code := 201;
+END;
+
+Delete del MESSAGE BEGIN
+    INSERT INTO MESSAGE (ID, MESSAGETEXT) VALUES (id, messagetext);
+
+Plantilla Message/:id
+GET
+SELECT * FROM MESSAGE
+WHERE ID = :id
+
+https://gf050f9f478c3c3-proyecdisfraz1.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/open-api-catalog/client/
